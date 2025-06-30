@@ -1,22 +1,22 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue' // This is your login page!
+import DashBoardView from '@/views/DashBoard.vue'
+import PayRollView from '@/views/PayRollView.vue'
+import EmployeesCardView from '@/views/employeescard.vue'
+import PerformanceReviewView from '@/views/PerformanceReviewView.vue'
+import HrView from '@/views/HrView.vue'
+import EmployeeView from '@/views/EmployeeView.vue'
+
+
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-    }
-  }
+  { path: '/', name: 'Login', component: HomeView },
+  { path: '/dashboard', name: 'Dashboard', component: DashBoardView },
+  { path: '/payroll', name: 'Payroll', component: PayRollView },
+  { path: '/employee', name: 'Employees', component: EmployeesCardView },
+  { path: '/performance-reviews', name: 'PerformanceReviews', component: PerformanceReviewView },
+  { path: '/hrView', name:'hrview', component: HrView},
+  { path: '/employeeview', name:'employee', component:EmployeeView}
 ]
 
 const router = createRouter({
